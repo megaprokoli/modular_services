@@ -1,7 +1,7 @@
 from abc import abstractmethod
 from threading import Thread
 
-from service_sys.abstract_service import AbstractService
+from modular_services.abstract_service import AbstractService
 
 
 class DeamonService(AbstractService):
