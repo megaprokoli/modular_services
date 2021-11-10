@@ -11,6 +11,7 @@ class AbstractService(ABC):
         self.version = None
         self.author = None
         self.update = None
+        self.config = None
         self._default_help = {"content": "help - get this help text\ninfo - get info about service\n"}
         self._dependencies = None   # dict containing dependencies like e.g a database interface or GUI component
 
@@ -34,11 +35,12 @@ class AbstractService(ABC):
         return {"name": self.name, "author": self.author,
                 "last_update": self.update, "version": self.version}
 
-    def set_info(self, name, author, update, version):
+    def set_info(self, name, author, update, version, config):
         self.name = name
         self.author = author
         self.update = update
         self.version = version
+        self.config = config
 
     def set_name(self, name):
         self.name = name

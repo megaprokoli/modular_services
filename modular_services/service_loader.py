@@ -37,7 +37,9 @@ class ServiceLoader:
                 continue
 
             try:
-                instance.set_info(index["module_name"], index["author"], index["last_update"], index["version"])
+                instance.set_info(index["module_name"], index["author"],
+                                  index["last_update"], index["version"],
+                                  index["config"])
             except KeyError:
                 logger.error("index file for " + file + " may be corrupted")
                 continue
